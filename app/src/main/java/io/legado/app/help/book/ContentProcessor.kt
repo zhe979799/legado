@@ -18,6 +18,7 @@ import io.legado.app.utils.toastOnUi
 import kotlinx.coroutines.CancellationException
 import splitties.init.appCtx
 import java.lang.ref.WeakReference
+import io.legado.app.help.book.HttpReplace
 import java.util.concurrent.CopyOnWriteArrayList
 import java.util.regex.Pattern
 
@@ -148,10 +149,19 @@ class ContentProcessor private constructor(
                 effectiveReplaceRules = arrayListOf()
                 mContent = mContent.lines().joinToString("\n") { it.trim() }
                 getContentReplaceRules().forEach { item ->
-                    if (item.pattern.isEmpty()) {
-                        return@forEach
-                    }
                     try {
+                        if (item.isHttp && !item.httpUrl.isNullOrBlank()) {
+                            HttpReplace.request(item, mContent)?.let { tmp ->
+                                if (mContent != tmp) {
+                                    effectiveReplaceRules.add(item)
+                                    mContent = tmp
+                                }
+                            }
+                            return@forEach
+                        }
+                        if (item.pattern.isEmpty()) {
+                            return@forEach
+                        }
                         val tmp = if (item.isRegex) {
                             mContent.replace(
                                 item.regex,

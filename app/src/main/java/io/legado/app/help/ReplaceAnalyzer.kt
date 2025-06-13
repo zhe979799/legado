@@ -38,6 +38,12 @@ object ReplaceAnalyzer {
                 rule.scope = jsonItem.readString("$.useTo")
                 rule.isEnabled = jsonItem.readBool("$.enable") == true
                 rule.order = jsonItem.readInt("$.serialNumber") ?: 0
+                rule.isHttp = jsonItem.readBool("$.isHttp") == true
+                rule.httpUrl = jsonItem.readString("$.httpUrl")
+                rule.httpParams = jsonItem.readString("$.httpParams")
+                rule.httpHeaders = jsonItem.readString("$.httpHeaders")
+                rule.httpMethod = jsonItem.readString("$.httpMethod")
+                rule.httpJsonPath = jsonItem.readString("$.httpJsonPath")
                 return@runCatching rule
             }
             return@runCatching replaceRule

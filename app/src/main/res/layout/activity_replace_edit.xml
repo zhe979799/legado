@@ -165,6 +165,73 @@
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
             </io.legado.app.ui.widget.text.TextInputLayout>
 
+            <io.legado.app.lib.theme.view.ThemeCheckBox
+                android:id="@+id/cb_use_http"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/use_http_replace"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <io.legado.app.ui.widget.text.TextInputLayout
+                android:id="@+id/til_http_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/http_url">
+
+                <io.legado.app.lib.theme.view.ThemeEditText
+                    android:id="@+id/et_http_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </io.legado.app.ui.widget.text.TextInputLayout>
+
+            <io.legado.app.ui.widget.text.TextInputLayout
+                android:id="@+id/til_http_params"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/http_params">
+
+                <io.legado.app.lib.theme.view.ThemeEditText
+                    android:id="@+id/et_http_params"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </io.legado.app.ui.widget.text.TextInputLayout>
+
+            <io.legado.app.ui.widget.text.TextInputLayout
+                android:id="@+id/til_http_headers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/http_headers">
+
+                <io.legado.app.lib.theme.view.ThemeEditText
+                    android:id="@+id/et_http_headers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </io.legado.app.ui.widget.text.TextInputLayout>
+
+            <io.legado.app.ui.widget.text.TextInputLayout
+                android:id="@+id/til_http_method"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/http_method">
+
+                <io.legado.app.lib.theme.view.ThemeEditText
+                    android:id="@+id/et_http_method"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </io.legado.app.ui.widget.text.TextInputLayout>
+
+            <io.legado.app.ui.widget.text.TextInputLayout
+                android:id="@+id/til_http_json_path"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/http_json_path">
+
+                <io.legado.app.lib.theme.view.ThemeEditText
+                    android:id="@+id/et_http_json_path"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </io.legado.app.ui.widget.text.TextInputLayout>
+
         </LinearLayout>
     </io.legado.app.ui.widget.NoChildScrollNestedScrollView>
 
