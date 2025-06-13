@@ -19,6 +19,13 @@ object HttpReplace {
             val params = GSON.fromJsonObject<Map<String, String>>(rule.httpParams).getOrNull()?.toMutableMap() ?: mutableMapOf()
             params["text"] = text
             val method = rule.httpMethod?.uppercase() ?: "POST"
+            AppLog.put("http replace request ${rule.httpUrl} ${method}")
+            if (headers.isNotEmpty()) {
+                AppLog.put("headers: ${'$'}headers")
+            }
+            if (params.isNotEmpty()) {
+                AppLog.put("params: ${'$'}params")
+            }
             val res = okHttpClient.newCallStrResponse {
                 addHeaders(headers)
                 if (method == "GET") {
@@ -29,10 +36,13 @@ object HttpReplace {
                 }
             }
             val body = res.body ?: return@runBlocking null
+            AppLog.put("http replace response ${'$'}body")
             rule.httpJsonPath?.takeIf { it.isNotBlank() }?.let { path ->
-                return@runBlocking kotlin.runCatching {
+                val result = kotlin.runCatching {
                     jsonPath.parse(body).read<String>(path)
                 }.getOrElse { body }
+                AppLog.put("http replace result ${'$'}result")
+                return@runBlocking result
             }
             return@runBlocking body
         } catch (e: Exception) {

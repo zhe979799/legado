@@ -199,6 +199,8 @@ class ReadMenu @JvmOverloads constructor(
         fabAutoPage.setColorFilter(textColor)
         fabReplaceRule.backgroundTintList = bottomBackgroundList
         fabReplaceRule.setColorFilter(textColor)
+        fabHttpReplace.backgroundTintList = bottomBackgroundList
+        fabHttpReplace.setColorFilter(textColor)
         fabNightTheme.backgroundTintList = bottomBackgroundList
         fabNightTheme.setColorFilter(textColor)
         tvPre.setTextColor(textColor)
@@ -449,6 +451,9 @@ class ReadMenu @JvmOverloads constructor(
         //替换
         fabReplaceRule.setOnClickListener { callBack.openReplaceRule() }
 
+        //http替换
+        fabHttpReplace.setOnClickListener { callBack.httpReplace() }
+
         //夜间模式
         fabNightTheme.setOnClickListener {
             AppConfig.isNightTheme = !AppConfig.isNightTheme
@@ -582,6 +587,7 @@ class ReadMenu @JvmOverloads constructor(
         fun showLogin()
         fun payAction()
         fun disableSource()
+        fun httpReplace()
         fun skipToChapter(index: Int)
         fun onMenuShow()
         fun onMenuHide()
