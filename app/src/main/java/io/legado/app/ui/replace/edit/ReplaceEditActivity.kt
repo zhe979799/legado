@@ -109,6 +109,12 @@ class ReplaceEditActivity :
         etScope.setText(replaceRule.scope)
         etExcludeScope.setText(replaceRule.excludeScope)
         etTimeout.setText(replaceRule.timeoutMillisecond.toString())
+        cbUseHttp.isChecked = replaceRule.isHttp
+        etHttpUrl.setText(replaceRule.httpUrl)
+        etHttpParams.setText(replaceRule.httpParams)
+        etHttpHeaders.setText(replaceRule.httpHeaders)
+        etHttpMethod.setText(replaceRule.httpMethod)
+        etHttpJsonPath.setText(replaceRule.httpJsonPath)
     }
 
     private fun getReplaceRule(): ReplaceRule = binding.run {
@@ -123,6 +129,12 @@ class ReplaceEditActivity :
         replaceRule.scope = etScope.text.toString()
         replaceRule.excludeScope = etExcludeScope.text.toString()
         replaceRule.timeoutMillisecond = etTimeout.text.toString().ifEmpty { "3000" }.toLong()
+        replaceRule.isHttp = cbUseHttp.isChecked
+        replaceRule.httpUrl = etHttpUrl.text.toString()
+        replaceRule.httpParams = etHttpParams.text.toString()
+        replaceRule.httpHeaders = etHttpHeaders.text.toString()
+        replaceRule.httpMethod = etHttpMethod.text.toString()
+        replaceRule.httpJsonPath = etHttpJsonPath.text.toString()
         return replaceRule
     }
 

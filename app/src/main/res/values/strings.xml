@@ -1000,6 +1000,12 @@
     <string name="input_verification_code">Enter the CAPTCHA</string>
     <string name="verification_code">Verification code</string>
     <string name="timeout_millisecond">Timed out milliseconds</string>
+    <string name="use_http_replace">Use HTTP replace</string>
+    <string name="http_url">Request URL</string>
+    <string name="http_params">Request parameters</string>
+    <string name="http_headers">Request headers</string>
+    <string name="http_method">HTTP method</string>
+    <string name="http_json_path">JSONPath</string>
     <string name="file_not_supported">Continue to open although %1$s is not supported ?</string>
     <string name="import_tts">Import TTS</string>
     <string name="import_theme">Import theme</string>

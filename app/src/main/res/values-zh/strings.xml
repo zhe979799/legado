@@ -997,6 +997,12 @@
     <string name="input_verification_code">输入验证码</string>
     <string name="verification_code">验证码</string>
     <string name="timeout_millisecond">超时毫秒数</string>
+    <string name="use_http_replace">使用HTTP替换</string>
+    <string name="http_url">请求地址</string>
+    <string name="http_params">请求参数</string>
+    <string name="http_headers">请求头</string>
+    <string name="http_method">请求方法</string>
+    <string name="http_json_path">JSONPath</string>
     <string name="file_not_supported">文件 %1$s 不受支持，是否继续打开？</string>
     <string name="import_tts">导入 TTS</string>
     <string name="import_theme">导入主题</string>

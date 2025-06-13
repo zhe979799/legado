@@ -56,7 +56,20 @@ data class ReplaceRule(
     var timeoutMillisecond: Long = 3000L,
     //排序
     @ColumnInfo(name = "sortOrder", defaultValue = "0")
-    var order: Int = Int.MIN_VALUE
+    var order: Int = Int.MIN_VALUE,
+    //是否http替换
+    @ColumnInfo(defaultValue = "0")
+    var isHttp: Boolean = false,
+    //http请求地址
+    var httpUrl: String? = null,
+    //http请求参数
+    var httpParams: String? = null,
+    //http请求头
+    var httpHeaders: String? = null,
+    //http请求方法
+    var httpMethod: String? = null,
+    //返回值jsonPath
+    var httpJsonPath: String? = null
 ) : Parcelable {
 
     override fun equals(other: Any?): Boolean {
