@@ -36,7 +36,9 @@ object HttpReplace {
                 }
             }
             val body = res.body ?: return@runBlocking null
+
             AppLog.put("http replace response ${'$'}body")
+
             rule.httpJsonPath?.takeIf { it.isNotBlank() }?.let { path ->
                 val result = kotlin.runCatching {
                     jsonPath.parse(body).read<String>(path)
