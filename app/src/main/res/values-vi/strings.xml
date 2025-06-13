@@ -196,6 +196,7 @@
     <string name="replace_rule_edit">Sửa quy tắc thay thế</string>
     <string name="replace_rule">Hoa văn</string>
     <string name="replace_to">Thay thế</string>
+    <string name="http_replace">Thay thế HTTP</string>
     <string name="img_cover">Bìa</string>
     <string name="book">Sách</string>
     <string name="volume_key_page">Phím âm lượng để lật trang</string>

@@ -1168,6 +1168,13 @@ class ReadBookActivity : BaseReadBookActivity(),
         replaceActivity.launch(Intent(this, ReplaceRuleActivity::class.java))
     }
 
+    override fun httpReplace() {
+        ReadBook.book?.let {
+            viewModel.refreshContentDur(it)
+            showDialogFragment<AppLogDialog>()
+        }
+    }
+
     /**
      * 打开目录
      */
