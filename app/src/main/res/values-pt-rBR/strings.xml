@@ -201,6 +201,7 @@
     <string name="replace_rule_edit">Editar regra de substituição</string>
     <string name="replace_rule">Modelo</string>
     <string name="replace_to">Substituição</string>
+    <string name="http_replace">Substituição HTTP</string>
     <string name="img_cover">Capa</string>
     <string name="book">Livro</string>
     <string name="volume_key_page">Botões de volume para virar páginas</string>

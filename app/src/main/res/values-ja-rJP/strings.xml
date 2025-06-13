@@ -201,6 +201,7 @@
     <string name="replace_rule_edit">Edit replacement rule</string>
     <string name="replace_rule">Pattern</string>
     <string name="replace_to">Replacement</string>
+    <string name="http_replace">HTTP置換</string>
     <string name="img_cover">Cover</string>
     <string name="book">Book</string>
     <string name="volume_key_page">Volume keys to turn page</string>
