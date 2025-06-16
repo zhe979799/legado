@@ -10,6 +10,7 @@ import android.text.Editable
 import cn.hutool.core.net.URLEncodeUtil
 import io.legado.app.constant.AppPattern
 import io.legado.app.constant.AppPattern.dataUriRegex
+import io.legado.app.utils.GSON
 import java.io.File
 import java.lang.Character.codePointCount
 import java.lang.Character.offsetByCodePoints
@@ -140,3 +141,25 @@ fun String.escapeRegex(): String {
 }
 
 fun String.encodeURI(): String = URLEncodeUtil.encodeQuery(this)
+
+/**
+ * Convert lines of `key:value` or `key=value` pairs into JSON map string.
+ * If the text is already a JSON object or empty, return original text.
+ */
+fun String.toJsonMapLines(): String {
+    val str = trim()
+    if (str.isEmpty() || str.isJsonObject()) return str
+    val map = linkedMapOf<String, String>()
+    str.lineSequence().forEach { line ->
+        val content = line.trim()
+        if (content.isNotEmpty()) {
+            val delimiterIndex = content.indexOfFirst { it == ':' || it == '=' }
+            if (delimiterIndex > 0) {
+                val key = content.substring(0, delimiterIndex).trim()
+                val value = content.substring(delimiterIndex + 1).trim()
+                if (key.isNotEmpty()) map[key] = value
+            }
+        }
+    }
+    return if (map.isEmpty()) str else GSON.toJson(map)
+}

@@ -69,6 +69,7 @@ object LogUtils {
             val date = getCurrentDateStr(TIME_PATTERN).replace(" ", "_").replace(":", "-")
             val logPath = FileUtils.getPath(root = logFolder, "appLog-$date.txt")
             return AsyncFileHandler(logPath).apply {
+                encoding = "UTF-8"
                 formatter = object : java.util.logging.Formatter() {
                     override fun format(record: LogRecord): String {
                         // 设置文件输出格式

@@ -17,6 +17,7 @@ import io.legado.app.lib.dialogs.SelectItem
 import io.legado.app.ui.widget.keyboard.KeyboardToolPop
 import io.legado.app.utils.GSON
 import io.legado.app.utils.imeHeight
+import io.legado.app.utils.toJsonMapLines
 import io.legado.app.utils.sendToClip
 import io.legado.app.utils.setOnApplyWindowInsetsListenerCompat
 import io.legado.app.utils.showHelp
@@ -131,8 +132,8 @@ class ReplaceEditActivity :
         replaceRule.timeoutMillisecond = etTimeout.text.toString().ifEmpty { "3000" }.toLong()
         replaceRule.isHttp = cbUseHttp.isChecked
         replaceRule.httpUrl = etHttpUrl.text.toString()
-        replaceRule.httpParams = etHttpParams.text.toString()
-        replaceRule.httpHeaders = etHttpHeaders.text.toString()
+        replaceRule.httpParams = etHttpParams.text.toString().toJsonMapLines()
+        replaceRule.httpHeaders = etHttpHeaders.text.toString().toJsonMapLines()
         replaceRule.httpMethod = etHttpMethod.text.toString()
         replaceRule.httpJsonPath = etHttpJsonPath.text.toString()
         return replaceRule
