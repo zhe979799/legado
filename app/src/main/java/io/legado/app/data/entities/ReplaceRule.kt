@@ -99,6 +99,9 @@ data class ReplaceRule(
     }
 
     fun isValid(): Boolean {
+        if (isHttp) {
+            return true;
+        }
         if (TextUtils.isEmpty(pattern)) {
             return false
         }
