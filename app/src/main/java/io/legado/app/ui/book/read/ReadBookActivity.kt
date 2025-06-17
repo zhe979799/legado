@@ -72,6 +72,7 @@ import io.legado.app.ui.book.bookmark.BookmarkDialog
 import io.legado.app.ui.book.changesource.ChangeBookSourceDialog
 import io.legado.app.ui.book.changesource.ChangeChapterSourceDialog
 import io.legado.app.ui.book.info.BookInfoActivity
+import io.legado.app.ui.book.read.HttpReplaceDialog
 import io.legado.app.ui.book.read.config.AutoReadDialog
 import io.legado.app.ui.book.read.config.BgTextConfigDialog.Companion.BG_COLOR
 import io.legado.app.ui.book.read.config.BgTextConfigDialog.Companion.TEXT_COLOR
@@ -618,6 +619,8 @@ class ReadBookActivity : BaseReadBookActivity(),
             }
 
             R.id.menu_effective_replaces -> showDialogFragment<EffectiveReplacesDialog>()
+
+            R.id.menu_http_replace -> showDialogFragment(HttpReplaceDialog())
 
             R.id.menu_help -> showHelp()
         }

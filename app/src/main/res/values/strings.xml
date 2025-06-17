@@ -967,6 +967,15 @@
     <string name="menu_refresh_after">Refresh the chapter after</string>
     <string name="menu_refresh_all">Refresh all chapters</string>
     <string name="edit_content">Edit Content</string>
+    <string name="http_replace">HTTP Replace</string>
+    <string name="request_url">Request URL</string>
+    <string name="request_method">Request Method</string>
+    <string name="request_param_key">Content Param Name</string>
+    <string name="add_header">Add Header</string>
+    <string name="send_request">Send Request</string>
+    <string name="jsonpath">JsonPath</string>
+    <string name="key">Key</string>
+    <string name="value">Value</string>
     <string name="chapter_change_source">Single chapter source switching</string>
     <string name="book_change_source">Change the source of the whole book</string>
     <string name="sort_by_time">Sort by time</string>
