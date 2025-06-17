@@ -181,4 +181,6 @@ object PreferKey {
     const val readBarStyleFollowPage = "readBarStyleFollowPage"
     const val contentSelectSpeakMod = "contentReadAloudMod"
 
+    const val httpReplaceConfig = "httpReplaceConfig"
+
 }
